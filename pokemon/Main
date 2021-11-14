@@ -1,0 +1,69 @@
+public class Main {
+    public static void main(String[] args) {
+        Attack pokemons[] = new Attack[20];
+        int qtdDePokemon = 0;
+        
+        int opcaoPersonagem1,opcaoPokemon, opcaoPersonagem2;
+        do{ 
+            opcaoPokemon = Leitor.leInteiroDoTeclado("");
+
+            switch(opcaoPokemon){ 
+                case 1: 
+                String nome = Leitor.leStringDoTeclado("Digite o nome do pokemon: ");
+                int vida = Leitor.leInteiroDoTeclado("Digite a vida do pokemon: ");
+                int forca = Leitor.leInteiroDoTeclado("Digite a forca do pokemon: ");
+                Pokemon pokemon = new Agua(nome, vida, forca);
+                pokemons[qtdDePokemon] = pokemon;
+                qtdDePokemon++;
+                break;
+               
+                case 2: 
+                String nome1 = Leitor.leStringDoTeclado("Digite o nome do pokemon: ");
+                int vida1 = Leitor.leInteiroDoTeclado("Digite a vida do pokemon: ");
+                int forca1 = Leitor.leInteiroDoTeclado("Digite a forca do pokemon: ");
+                Pokemon pokemon1 = new Terra(nome1, vida1, forca1);
+                pokemons[qtdDePokemon] = pokemon1;
+                qtdDePokemon++;
+
+                case 3: 
+                String nome2 = Leitor.leStringDoTeclado("Digite o nome do pokemon: ");
+                int vida2 = Leitor.leInteiroDoTeclado("Digite a vida do pokemon: ");
+                int forca2 = Leitor.leInteiroDoTeclado("Digite a forca do pokemon: ");
+                Pokemon pokemon2 = new Eletricidade(nome2, vida2, forca2);
+                pokemons[qtdDePokemon] = pokemon2;
+                qtdDePokemon++;
+
+                case 4: 
+                String nome3 = Leitor.leStringDoTeclado("Digite o nome do pokemon: ");
+                int vida3 = Leitor.leInteiroDoTeclado("Digite a vida do pokemon: ");
+                int forca3 = Leitor.leInteiroDoTeclado("Digite a forca do pokemon: ");
+                Pokemon pokemon3 = new Normais(nome3, vida3, forca3);
+                pokemons[qtdDePokemon] = pokemon3;
+                qtdDePokemon++;
+
+                case 5: 
+                String nome4 = Leitor.leStringDoTeclado("Digite o nome do pokemon: ");
+                int vida4 = Leitor.leInteiroDoTeclado("Digite a vida do pokemon: ");
+                int forca4 = Leitor.leInteiroDoTeclado("Digite a forca do pokemon: ");
+                Pokemon pokemon4 = new Fogo(nome4, vida4, forca4);
+                pokemons[qtdDePokemon] = pokemon4;
+                qtdDePokemon++;
+               
+                case 6:
+                    for(int i = 0; i < pokemons.length; i++){
+                        System.out.print(i + " " + pokemons[i]);
+                        System.out.println("\n");
+                    } 
+                    break;
+                
+                    case 7:
+                    opcaoPersonagem1 = Leitor.leInteiroDoTeclado("Pokemon que ataca: \n");
+                    opcaoPersonagem2 = Leitor.leInteiroDoTeclado("Pokemon que é atacado: \n");
+                    pokemons[opcaoPersonagem1].ataca(pokemons[opcaoPersonagem2]);
+                    pokemons[opcaoPersonagem2].recebeDano(pokemons[opcaoPersonagem1]);
+
+                    break;
+                }       
+        }while(opcaoPokemon != 0);
+    }
+}
